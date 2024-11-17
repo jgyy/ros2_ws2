@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import rclpy
 from rclpy.node import Node
-from robot_control.sys import ChangeState
+from robot_control.srv import ChangeState
 import sys
 
 class StateController(Node):

@@ -1,5 +1,5 @@
 # Goal
-float64[] final_position
+float64[] target_positions
 ---
 # Result
 bool success

@@ -17,7 +17,7 @@ class MoveCommander(Node):
         self.get_logger().info('Waiting for action server...')
         self._action_client.wait_for_server()
         goal_msg = MoveRobot.Goal()
-        goal_msg.target_position = target_position
+        goal_msg.target_positions = target_position
         self.get_logger().info(f'Sending goal: {target_position}')
         self._send_goal_future = self._action_client.send_goal_async(
             goal_msg,
