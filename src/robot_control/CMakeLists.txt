@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.8)
 project(robot_control)
 
-if(CMAKE_COMPILER_ISGNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
@@ -20,20 +20,18 @@ rosidl_generate_interfaces(${PROJECT_NAME}
 
 ament_python_install_package(${PROJECT_NAME})
 
-install(PROGRAMS
-  scripts/robot_state_publisher
-  scripts/robot_monitor
-  scripts/state_controller
-  scripts/robot_mover
-  scripts/move_commander
-  DESTINATION lib/${PROJECT_NAME}
+install(DIRECTORY
+  launch
+  DESTINATION share/${PROJECT_NAME}
 )
 
-if(BUILD_TESTING)
-  find_package(ament_lint_auto REQUIRED)
-  set(ament_cmake_copyright_FOUND TRUE)
-  set(ament_cmake_cpplint_FOUND TRUE)
-  ament_lint_auto_find_test_dependencies()
-endif()
+install(PROGRAMS
+  robot_control/nodes/robot_state_publisher.py
+  robot_control/nodes/robot_monitor.py
+  robot_control/nodes/state_controller.py
+  robot_control/nodes/robot_mover.py
+  robot_control/nodes/move_commander.py
+  DESTINATION lib/${PROJECT_NAME}
+)
 
 ament_package()
