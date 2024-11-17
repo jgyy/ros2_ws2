@@ -1,7 +1,0 @@
-# Request
-string new_state
----
-# Response
-bool success
-string previous_state
-string current_state
