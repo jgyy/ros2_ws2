@@ -31,7 +31,7 @@ class RobotMonitor(Node):
     def log_joint_positions(self, positions, state):
         timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         with open(self.log_file, 'a') as f:
-            pos_str = ', ' join([f'{p:.3f}' for p in positions])
+            pos_str = ', '.join([f'{p:.3f}' for p in positions])
             f.write(f'{timestamp} - State: {state} - Positions [{pos_str}]\n')
         self.get_logger().info(f'Joint positions logged for state change to {state}')
 
