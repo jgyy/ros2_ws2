@@ -1,0 +1,11 @@
+# Goal
+float64[] final_position
+---
+# Result
+bool success
+float64[] final_position
+float64 completion_time
+---
+# Feedback
+float64 percent_complete
+float64[] current_position
