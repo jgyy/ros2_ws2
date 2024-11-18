@@ -1,0 +1,9 @@
+# Request
+string component_name
+bool detailed_check
+---
+# Response
+bool status_ok
+string[] warnings
+string[] errors
+float32 check_duration

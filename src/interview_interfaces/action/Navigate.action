@@ -1,0 +1,15 @@
+# Goal
+geometry_msg/Pose[] waypoints
+float32 max_velocity
+bool allow_partial_completion
+---
+# Result
+uint32 completed_waypoints
+float32 total_distance
+bool all_waypoints_reached
+---
+# Feedback
+uint32 current_waypoint
+geometry_msgs/Pose current_pose
+float32 distance_remaining
+float32 estimated_time_remaining
